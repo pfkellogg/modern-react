@@ -6,6 +6,7 @@ const Rating = () => {
 
   // The Array.from() method returns an array from any object with a length property.
   const stars = Array.from({ length: 5 }, (_, i) => i + 1)
+  const feedbackMessages = ['Terrible', 'Poor', 'Average', 'Good', 'Excellent']
 
   return (
     <div className="rating-container">
@@ -17,12 +18,13 @@ const Rating = () => {
             onMouseLeave={() => setHover(0)}
             onClick={() => setRating(star)}
             key={star}
-            className="star"
+            className={`star ${star <= (hover || rating) ? 'active' : ''}`}
           >
             {'\u2605'}
           </span>
         ))}
       </div>
+      {rating > 0 && <p className="feedback">{feedbackMessages[rating - 1]}</p>}
     </div>
   )
 }
