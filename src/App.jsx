@@ -30,7 +30,7 @@ const App = () => {
         feedbackMessages={[
           'Hate it',
           'Dislike it',
-          'So so',
+          'Meh',
           'Like it',
           'Love it'
         ]}
